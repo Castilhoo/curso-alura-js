@@ -8,6 +8,8 @@ adicionar.addEventListener('click', function(event){
     var paciente = obtemInfoPaciente(form); // Pegar dados do formulário
     var pacienteTr = montaTr(paciente); //cria a tr e a td do paciente 
 
+    
+
     var tabela = document.querySelector('#tabela-pacientes');
 
     tabela.appendChild(pacienteTr);
@@ -55,4 +57,8 @@ function montaTd(dado, classe) {
     td.classList.add(classe)
 
     return td;
+}
+
+function validaPaciente(paciente){
+    
 }
