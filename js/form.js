@@ -8,7 +8,11 @@ adicionar.addEventListener('click', function(event){
     var paciente = obtemInfoPaciente(form); // Pegar dados do formulário
     var pacienteTr = montaTr(paciente); //cria a tr e a td do paciente 
 
-    if(!validaPaciente(paciente)){
+    var erro = validaPaciente(paciente);
+
+    if(erro.length > 0){
+        var mensagemErro = document.querySelector('#mensagem-erro');
+        mensagemErro.textContent = erro;
         return;
     }
 
@@ -63,8 +67,8 @@ function montaTd(dado, classe) {
 
 function validaPaciente(paciente){
     if(validaPeso(paciente.peso)){
-        return true;
+        return "";
     }else{
-        return false;
+        return "O peso é inválido";
     }
 }
