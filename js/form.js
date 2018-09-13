@@ -8,7 +8,9 @@ adicionar.addEventListener('click', function(event){
     var paciente = obtemInfoPaciente(form); // Pegar dados do formulário
     var pacienteTr = montaTr(paciente); //cria a tr e a td do paciente 
 
-    
+    if(!validaPaciente(paciente)){
+        return;
+    }
 
     var tabela = document.querySelector('#tabela-pacientes');
 
@@ -60,5 +62,9 @@ function montaTd(dado, classe) {
 }
 
 function validaPaciente(paciente){
-    
+    if(validaPeso(paciente.peso)){
+        return true;
+    }else{
+        return false;
+    }
 }
