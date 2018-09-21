@@ -155,3 +155,7 @@ button[disabled=disabled], button:disabled {
 .esconde-paciente {
 	display: none;
 }
+
+.invisivel {
+	display: none;
+}
